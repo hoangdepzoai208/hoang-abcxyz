@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câu Lạc Bộ Bơi Lội</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #e0f7fa;
+    }
+
+    header {
+      background: #0288d1;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #0277bd;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background: #01579b;
+    }
+
+    .hero {
+      padding: 60px;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+      color: white;
+    }
+
+    .section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .card button {
+      background: #d32f2f;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .card button:hover {
+      background: #9a0007;
+    }
+
+    footer {
+      background: #0288d1;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    button {
+      background: #0288d1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #01579b;
+    }
+
+    input, select {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #search {
+      width: 250px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Câu Lạc Bộ Bơi Lội</h1>
+  <p>Khỏe mạnh - Tự tin - Thành công</p>
+</header>
+
+<nav>
+  <a href="#">Trang chủ</a>
+  <a href="#about">Giới thiệu</a>
+  <a href="#classes">Lớp học</a>
+  <a href="#members">Thành viên</a>
+  <a href="#contact">Liên hệ</a>
+</nav>
+
+<section class="hero">
+  <h2>Chào mừng bạn đến với CLB Bơi Lội</h2>
+  <p>Học bơi chuyên nghiệp cùng huấn luyện viên giàu kinh nghiệm</p>
+  <button onclick="alert('Đăng ký thành công!')">Đăng ký ngay</button>
+</section>
+
+<section id="about" class="section">
+  <h2>Giới thiệu</h2>
+  <p>CLB bơi lội của chúng tôi cung cấp các khóa học từ cơ bản đến nâng cao cho mọi lứa tuổi.</p>
+</section>
+
+<section id="classes" class="section">
+  <h2>Các lớp học</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Cơ bản</h3>
+      <p>Dành cho người mới bắt đầu</p>
+    </div>
+    <div class="card">
+      <h3>Trung cấp</h3>
+      <p>Nâng cao kỹ năng bơi</p>
+    </div>
+    <div class="card">
+      <h3>Nâng cao</h3>
+      <p>Thi đấu & kỹ thuật chuyên sâu</p>
+    </div>
+  </div>
+</section>
+
+<section id="members" class="section">
+  <h2>Thành viên CLB</h2>
+
+  <p><b>Tổng thành viên: <span id="count">6</span></b></p>
+
+  <input type="text" id="search" placeholder="🔍 Tìm thành viên..." onkeyup="searchMember()">
+
+  <div class="cards" id="memberList">
+    <div class="card">
+      <h3>Nguyễn Thị Kim Ngân</h3>
+      <p>Trình độ: Cơ bản</p>
+    </div>
+    <div class="card">
+      <h3>Bùi Thị Ánh Nguyệt</h3>
+      <p>Trình độ: Trung cấp</p>
+    </div>
+    <div class="card">
+      <h3>Nguyễn Thị Trúc Nguyên</h3>
+      <p>Trình độ: Nâng cao</p>
+    </div>
+    <div class="card">
+      <h3>Hồ Hữu TàiD</h3>
+      <p>Trình độ: Trung cấp</p>
+    </div>
+    <div class="card">
+      <h3>Phạm Hồng Điệp</h3>
+      <p>Trình độ: Cơ bản</p>
+    </div>
+    <div class="card">
+      <h3>Trần Trương Minh Trí</h3>
+      <p>Trình độ: Nâng cao</p>
+    </div>
+  </div>
+
+  <h3>Thêm thành viên</h3>
+  <input type="text" id="name" placeholder="Nhập tên">
+  <select id="level">
+    <option>Cơ bản</option>
+    <option>Trung cấp</option>
+    <option>Nâng cao</option>
+  </select>
+  <br>
+  <button onclick="addMember()">Thêm</button>
+</section>
+
+<section id="contact" class="section">
+  <h2>Liên hệ</h2>
+  <p>Email: clbboiloi@email.com</p>
+  <p>Điện thoại: 0123 456 789</p>
+</section>
+
+<footer>
+  <p>© 2026 CLB Bơi Lội</p>
+</footer>
+
+<script>
+let count = 6;
+document.getElementById("count").innerText = count;
+
+function addMember() {
+  let name = document.getElementById("name").value.trim();
+  let level = document.getElementById("level").value;
+
+  if (name === "") {
+    alert("Vui lòng nhập tên!");
+    return;
+  }
+
+  let members = document.querySelectorAll("#memberList h3");
+  for (let m of members) {
+    if (m.innerText.toLowerCase() === name.toLowerCase()) {
+      alert("Tên đã tồn tại!");
+      return;
+    }
+  }
+
+  let card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <h3>${name}</h3>
+    <p>Trình độ: ${level}</p>
+    <button onclick="removeMember(this)">Xóa</button>
+  `;
+
+  document.getElementById("memberList").appendChild(card);
+
+  document.getElementById("name").value = "";
+
+  count++;
+  document.getElementById("count").innerText = count;
+}
+
+function removeMember(btn) {
+  btn.parentElement.remove();
+  count--;
+  document.getElementById("count").innerText = count;
+}
+
+function searchMember() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.querySelectorAll("#memberList .card");
+
+  cards.forEach(card => {
+    let name = card.querySelector("h3").innerText.toLowerCase();
+    card.style.display = name.includes(input) ? "block" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
